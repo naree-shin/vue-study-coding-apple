@@ -1,28 +1,5 @@
 <template>
   <div>
-    <div>
-      <h4>XX 원룸</h4>
-      <!-- 자료 불러올때 {{ 자료이름 }}-->
-      <p>{{price1}} 만원</p>
-    </div>
-    <div>
-      <h4>XX 원룸</h4>
-      <p :style="style01">{{ price2 }} 만원</p>
-    </div>
-    <div>
-      <!-- array -->
-      <h4>{{shop[0]}} 원룸</h4>
-      <p>{{ price2 }} 만원</p>
-    </div>
-    <div>
-      <h4>{{shop[1]}} 원룸</h4>
-      <p>{{ price2 }} 만원</p>
-    </div>
-    <div>
-      <h4>{{shop[2]}} 원룸</h4>
-      <p>{{ price2 }} 만원</p>
-    </div>
-
     <!-- html반복문 -->
     <div class="menu">
       <a v-for="작명 in 반복횟수" :key="작명">Home</a>
@@ -35,6 +12,23 @@
       <a v-for="작명 in 데이터" :key="작명">작명</a>
       <a v-for="a in menuArray" :key="a">{{a}}</a>
     </div>
+
+    <!-- 작명은 2개까지 가능 -->
+      <!-- a 는 shop안에 있던 데이터가 된다 -->
+    <div v-for="(a,i) in shop" :key="a">
+      <!-- <h4>{{shop[반복되면서0,1,2되는변수]}}원룸</h4> -->
+      <h4>{{shop[i]}}원룸</h4>
+      <p>50만원</p>
+    </div>
+    <!-- <div>
+      <h4>{{shop[1]}} 원룸</h4>
+      <p>{{ price2 }} 만원</p>
+    </div>
+    <div>
+      <h4>{{shop[2]}} 원룸</h4>
+      <p>{{ price2 }} 만원</p>
+    </div> -->
+
   </div>
 </template>
 
@@ -53,8 +47,7 @@ export default {
       style01 : 'color : blue', 
       // array
       menuArray : ['Home','Shop','About'],
-      shop : ['역삼동원룸','천호동원룸','마포구원룸']
-
+      
 
     }
   },
