@@ -6,26 +6,23 @@
     </div>
 
     <div>
+      <!-- 신고수버튼 여러개 만들기-->
       <h4>{{shop[0]}} 원룸</h4>
       <p>50 만원</p>
-
-      <!-- 기존 javascript -->
-      <!-- <button onclick="">허위매물신고</button> <span>신고수 : 0</span> -->
-      
-      <!-- vue 문법 -->
-      <!-- <button v-on:click="자바스크립트">허위매물신고</button> <span>신고수 : 0</span> -->
-      <!-- 'v-on:' -> '@' 로 축약가능  -->
-      <!-- '변수++' -> 변수에 1 더하기  -->
-      <!-- <button @click="신고수++">허위매물신고</button> <span>신고수 : {{신고수}}</span> -->
-      <button @click="increase">허위매물신고</button> <span>신고수 : {{신고수}}</span>
+      <button @click="신고수[0] += 1">허위매물신고</button>
+      <span>신고수 : {{신고수[0]}}</span>
     </div>
     <div>
       <h4>{{shop[1]}} 원룸</h4>
       <p>50 만원</p>
+      <button @click="신고수[1] += 1">허위매물신고</button>
+      <span>신고수 : {{신고수[1]}}</span>
     </div>
     <div>
       <h4>{{shop[2]}} 원룸</h4>
       <p>50 만원</p>
+      <button @click="신고수[2] += 1">허위매물신고</button>
+      <span>신고수 : {{신고수[2]}}</span>
     </div>
 
   </div>
@@ -37,7 +34,7 @@ export default {
   name: 'App',
   data(){
     return {
-      신고수 : 0,
+      신고수 : [0,0,0],
       menuArray : ['Home','Shop','About'],
       shop : ['역삼동','천호동','마포구']
       
