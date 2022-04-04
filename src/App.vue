@@ -41,6 +41,12 @@
 </template>
 
 <script>
+// oneroom.js -> export default apple
+import 작명 from './assets/js/data/oneroom.js';
+작명
+// oneroom.js -> export {apple,apple2}
+import {apple} from './assets/js/data/oneroom.js';
+apple
 
 export default {
   name: 'App',
