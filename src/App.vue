@@ -16,25 +16,10 @@
     </div>
 
     <div>
-      <img src="./assets/images/room0.jpg" class="room-img">
-      <h4 @click="모달창 = true">{{shop[0]}} 원룸</h4>
-      <p>50 만원</p>
-      <button @click="신고수[0] += 1">허위매물신고</button>
-      <span>신고수 : {{신고수[0]}}</span>
-    </div>
-    <div>
-      <img src="./assets/images/room1.jpg" class="room-img">
-      <h4>{{shop[1]}} 원룸</h4>
-      <p>50 만원</p>
-      <button @click="신고수[1] += 1">허위매물신고</button>
-      <span>신고수 : {{신고수[1]}}</span>
-    </div>
-    <div>
-      <img src="./assets/images/room2.jpg" class="room-img">
-      <h4>{{shop[2]}} 원룸</h4>
-      <p>50 만원</p>
-      <button @click="신고수[2] += 1">허위매물신고</button>
-      <span>신고수 : {{신고수[2]}}</span>
+      <!-- 속성안에 데이터바인딩 속성앞에 : 를 붙여야함 -->
+      <img :src="원룸들[0].image" class="room-img">
+      <h4>{{원룸들[0].title}} 원룸</h4>
+      <p>{{원룸들[0].price}}원</p>
     </div>
 
   </div>
@@ -42,16 +27,13 @@
 
 <script>
 // oneroom.js -> export default apple
-import 작명 from './assets/js/data/oneroom.js';
-작명
-// oneroom.js -> export {apple,apple2}
-import {apple} from './assets/js/data/oneroom.js';
-apple
+import data01 from './assets/js/data/oneroom.js';
 
 export default {
   name: 'App',
   data(){
     return {
+      원룸들 : data01,
       모달창 : false,
       신고수 : [0,0,0],
       menuArray : ['Home','Shop','About'],

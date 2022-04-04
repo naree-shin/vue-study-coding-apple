@@ -1,14 +1,4 @@
-var apple = 10;
-var apple2 = 100;
-
-// 애플 변수를 defult 로 내보내기
-export default apple
-export {apple, apple2}
-
-
-
-
-[{
+export default [{
     id : 0,
     title: "Sinrim station 30 meters away",
     image: "https://codingapple1.github.io/vue/room0.jpg",
