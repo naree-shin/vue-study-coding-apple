@@ -52,7 +52,6 @@ export default {
 </script>
 
 <style>
-/* 모달팝업 */
 body {
   margin: 0;
 }
@@ -85,7 +84,4 @@ div {
   width: 100%;
   margin-top: 40px;
 }
-
-
-
 </style>
